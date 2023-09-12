@@ -1,4 +1,6 @@
 Tautan repositori: https://github.com/teticeci/Make-me-Up.git
+Tautan aplikasi: https://make-me-up.adaptable.app
+
 
 Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 Jawab:
