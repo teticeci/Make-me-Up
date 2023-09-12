@@ -14,9 +14,6 @@ Repositori proyek GitHub akan langsung terhubung dengan deployment aplikasi di A
 
 Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
 Jawab:
-                                         <-> 5.Model
-1.Client <-> 2.Django <-> 3.URL <-> 4.View
-                                         <-> 6.Template
 ![google](https://i.postimg.cc/9f3cmCWt/mvt.png)
 1. Client membuat request ke website berbasis Django
 2. Jika request valid, akan diterima oleh web server dan diteruskan ke Django
