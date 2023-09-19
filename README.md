@@ -58,16 +58,22 @@ JSON sering digunakan dalam pengembangan API RESTful, yang menjadi standar dalam
 Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 Jawab:
 - Mengatur routing dari main/ ke /
+
 Menggunakan / sebagai basis URL, memiliki fleksibilitas untuk mengubah struktur situs tanpa perlu mengubah URL untuk setiap halaman. Tahapannya yaitu dengan menjalankan virtual environment, lalu membuka urls.py pada folder beauty_store dan mengubah path main/ menjadi ' ' pada urlpatterns.
 - Implementasi Skeleton sebagai kerangka views
+
 Skeleton berfungsi dalam memberikan umpan balik visual kepada pengguna bahwa halaman sedang dimuat, sehingga pengguna tahu bahwa aplikasi masih aktif dan bekerja. Tahapannya yaitu membuat root folder templates dan membuat berkas baru di dalamnya yaitu base.html, kemudian sesuaikan kode yang ada agar berkas base.html terdeteksi sebagai berkas template.
 - Membuat form input data dan menampilkan data pada HTML
- Form input memungkinkan pengguna untuk berinteraksi dengan aplikasi web secara interaktif. Tahapannya yaitu membuat berkas forms.py di direktori main, lalu menghubungkannya dengan views.py serta urls.py.
+
+Form input memungkinkan pengguna untuk berinteraksi dengan aplikasi web secara interaktif. Tahapannya yaitu membuat berkas forms.py di direktori main, lalu menghubungkannya dengan views.py serta urls.py.
 - Mengembalikan data dalam bentuk XML dan bentuk JSON
+
 XML sangat terstruktur sehingga mampu mendefinisikan tipe data rumit dengan jelas, ini berguna dalam situasi di mana data memiliki hierarki yang kompleks. JSON memiliki format yang lebih efisien dalam hal penggunaan bandwidth, ini membuatnya cocok untuk aplikasi web yang berfokus pada kinerja dan responsif. Tahapannya yaitu menambahkan fungsi baru di views.py dengan nama show_xml dan show_json, lalu mengimpor fungsi tersebut ke urls.py.
 - Mengembalikan data berdasarkan ID dalam bentuk XML dan JSON
+
 XML dan JSON memungkinkan untuk menggambarkan data dalam bentuk ID yang memuat informasi spesifik yang terkait dengan ID tertentu. Tahapannya yaitu membuat fungsi baru di views.py yang menerima parameter request dan id dengan nama show_xml_by_id dan show_json_by_id, lalu mengimpor fungsi tersebut ke urls.py.
 - Penggunaan Postman sebagai data viewer
+
 Postman menyediakan antarmuka yang intuitif dan mudah digunakan untuk melihat dan menganalisis data yang dikembalikan oleh API. Tahapannya yaitu melakukan send request ke Postman, lalu mengubah url menjadi http://localhost:8000/xml/[id] atau http://localhost:8000/json/[id] untuk mengetes fungsi pengambilan data produk berdasarkan ID.
 
 Screenshot dari hasil akses URL pada Postman
