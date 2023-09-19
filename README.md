@@ -1,4 +1,5 @@
 Tautan repositori: https://github.com/teticeci/Make-me-Up.git
+
 Tautan aplikasi: https://make-me-up.adaptable.app
 
 (TUGAS 2)
@@ -70,8 +71,8 @@ XML dan JSON memungkinkan untuk menggambarkan data dalam bentuk ID yang memuat i
 Postman menyediakan antarmuka yang intuitif dan mudah digunakan untuk melihat dan menganalisis data yang dikembalikan oleh API. Tahapannya yaitu melakukan send request ke Postman, lalu mengubah url menjadi http://localhost:8000/xml/[id] atau http://localhost:8000/json/[id] untuk mengetes fungsi pengambilan data produk berdasarkan ID.
 
 Screenshot dari hasil akses URL pada Postman
-![Screenshots]("C:\Users\tetib\OneDrive\Pictures\Screenshots\S__117391362.jpg")
-![Screenshots]("C:\Users\tetib\OneDrive\Pictures\Screenshots\Screenshot (284).png")
-![Screenshot]("C:\Users\tetib\OneDrive\Pictures\Screenshots\Screenshot (285).png")
-![Screenshots]("C:\Users\tetib\OneDrive\Pictures\Screenshots\Screenshot (286).png")
-![Screenshots]("C:\Users\tetib\OneDrive\Pictures\Screenshots\Screenshot (287).png")
+![S__117391362](https://github.com/teticeci/Make-me-Up/assets/143377299/728bda41-ea54-4025-9762-eb7a31cacf78)
+![Screenshot (285)](https://github.com/teticeci/Make-me-Up/assets/143377299/ba7d8d1b-9386-4e0b-9577-f4b0c32fc4fe)
+![Screenshot (284)](https://github.com/teticeci/Make-me-Up/assets/143377299/c3c7f1ab-a7b9-4fc6-972f-4cd7349b8ce4)
+![Screenshot (287)](https://github.com/teticeci/Make-me-Up/assets/143377299/4638ba0f-9bf2-410b-96c3-8a568c8764e2)
+![Screenshot (286)](https://github.com/teticeci/Make-me-Up/assets/143377299/637d7bd9-7379-471c-8ccf-6b6a08370e09)
