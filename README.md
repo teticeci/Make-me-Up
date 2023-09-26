@@ -1,4 +1,5 @@
 Tautan repositori: https://github.com/teticeci/Make-me-Up.git
+
 Tautan aplikasi: https://make-me-up.adaptable.app
 
 
@@ -58,24 +59,30 @@ JSON sering digunakan dalam pengembangan API RESTful, yang menjadi standar dalam
 Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 Jawab:
 - Mengatur routing dari main/ ke /
+
 Menggunakan / sebagai basis URL, memiliki fleksibilitas untuk mengubah struktur situs tanpa perlu mengubah URL untuk setiap halaman. Tahapannya yaitu dengan menjalankan virtual environment, lalu membuka urls.py pada folder beauty_store dan mengubah path main/ menjadi ' ' pada urlpatterns.
 - Implementasi Skeleton sebagai kerangka views
+
 Skeleton berfungsi dalam memberikan umpan balik visual kepada pengguna bahwa halaman sedang dimuat, sehingga pengguna tahu bahwa aplikasi masih aktif dan bekerja. Tahapannya yaitu membuat root folder templates dan membuat berkas baru di dalamnya yaitu base.html, kemudian sesuaikan kode yang ada agar berkas base.html terdeteksi sebagai berkas template.
 - Membuat form input data dan menampilkan data pada HTML
- Form input memungkinkan pengguna untuk berinteraksi dengan aplikasi web secara interaktif. Tahapannya yaitu membuat berkas forms.py di direktori main, lalu menghubungkannya dengan views.py serta urls.py.
+
+Form input memungkinkan pengguna untuk berinteraksi dengan aplikasi web secara interaktif. Tahapannya yaitu membuat berkas forms.py di direktori main, lalu menghubungkannya dengan views.py serta urls.py.
 - Mengembalikan data dalam bentuk XML dan bentuk JSON
+
 XML sangat terstruktur sehingga mampu mendefinisikan tipe data rumit dengan jelas, ini berguna dalam situasi di mana data memiliki hierarki yang kompleks. JSON memiliki format yang lebih efisien dalam hal penggunaan bandwidth, ini membuatnya cocok untuk aplikasi web yang berfokus pada kinerja dan responsif. Tahapannya yaitu menambahkan fungsi baru di views.py dengan nama show_xml dan show_json, lalu mengimpor fungsi tersebut ke urls.py.
 - Mengembalikan data berdasarkan ID dalam bentuk XML dan JSON
+
 XML dan JSON memungkinkan untuk menggambarkan data dalam bentuk ID yang memuat informasi spesifik yang terkait dengan ID tertentu. Tahapannya yaitu membuat fungsi baru di views.py yang menerima parameter request dan id dengan nama show_xml_by_id dan show_json_by_id, lalu mengimpor fungsi tersebut ke urls.py.
 - Penggunaan Postman sebagai data viewer
+
 Postman menyediakan antarmuka yang intuitif dan mudah digunakan untuk melihat dan menganalisis data yang dikembalikan oleh API. Tahapannya yaitu melakukan send request ke Postman, lalu mengubah url menjadi http://localhost:8000/xml/[id] atau http://localhost:8000/json/[id] untuk mengetes fungsi pengambilan data produk berdasarkan ID.
 
 Screenshot dari hasil akses URL pada Postman
-![Screenshots]("C:\Users\tetib\OneDrive\Pictures\Screenshots\S__117391362.jpg")
-![Screenshots]("C:\Users\tetib\OneDrive\Pictures\Screenshots\Screenshot (284).png")
-![Screenshot]("C:\Users\tetib\OneDrive\Pictures\Screenshots\Screenshot (285).png")
-![Screenshots]("C:\Users\tetib\OneDrive\Pictures\Screenshots\Screenshot (286).png")
-![Screenshots]("C:\Users\tetib\OneDrive\Pictures\Screenshots\Screenshot (287).png")
+![S__117391362](https://github.com/teticeci/Make-me-Up/assets/143377299/728bda41-ea54-4025-9762-eb7a31cacf78)
+![Screenshot (285)](https://github.com/teticeci/Make-me-Up/assets/143377299/ba7d8d1b-9386-4e0b-9577-f4b0c32fc4fe)
+![Screenshot (284)](https://github.com/teticeci/Make-me-Up/assets/143377299/c3c7f1ab-a7b9-4fc6-972f-4cd7349b8ce4)
+![Screenshot (287)](https://github.com/teticeci/Make-me-Up/assets/143377299/4638ba0f-9bf2-410b-96c3-8a568c8764e2)
+![Screenshot (286)](https://github.com/teticeci/Make-me-Up/assets/143377299/637d7bd9-7379-471c-8ccf-6b6a08370e09)
 
 
 (TUGAS 4)
@@ -96,7 +103,7 @@ Default yang diberikan masih terbatas, apabila user memiliki kebutuhan tambahan,
 
 Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
 Jawab:
-Autentikasi dan otorisasi sangat penting bagi aplikasi website karena berfungsi untuk mengamankan informasi pada sistem secara otomatis. Perbedaan utama terletak pada, autentikasi memverifikasi identitas user, sedangkan otorisasi menentukan tindakan apa yang dapat user lakukan dalam aplikasi web. Contohnya otorisasi yang berbeda antara dosen dan mahasiswa di website SIAKNG.
+Autentikasi dan otorisasi sangat penting bagi aplikasi website karena berfungsi untuk mengamankan informasi pada sistem secara otomatis. Perbedaan utama terletak pada, autentikasi memverifikasi identitas user, sedangkan otorisasi menentukan tindakan apa yang dapat user lakukan dalam aplikasi web. Contohnya otorisasi yang berbeda antara akun dosen dan akun mahasiswa di website SIAKNG.
 
 Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?
 Jawab:
@@ -109,7 +116,7 @@ Pada kondisi normal, cookies tidak bisa mentransfer malware/virus karena data ya
 Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 Jawab:
 - Mengimplementasikan fungsi registrasi, login, dan logout dengan cara menambahkan import beserta potongan kode di file main/views.py berupa fungsi def register(request), def login_user(request), dan def logout_user(request). Kemudian, membuat berkas html di file main/templates untuk setiap fungsi yang telah diinisiasi sebelumnya. Terakhir, membuka file main/urls.py lalu menambahkan import fungsi beserta potongan kode di urlspatterns untuk mengakses setiap fungsi yang telah diimpor.
-- Membuat dua akun pengguna dengan masing-masing tiga dummy data dengan cara ...
+- Membuat dua akun pengguna dengan masing-masing tiga dummy data dengan cara melakukan registrasi akun serta melakukan add new product pada web.
 - Menghubungkan model Item dengan User dengan cara menambahkan import beserta potongan kode di file main/models.py berupa ForeignKey di class Product yang berfungsi menghubungkan antara satu produk dengan satu user melalui sebuah relationship. Selanjutnya, mengubah kode di file main/views.py agar  memungkinkan modifikasi sebelum tersimpan ke database. Ubah juga fungsi show_main, kemudian lakukan migrasi model untuk menyimpan semua perubahan yang telah dilakukan.
 - Menampilkan detail informasi pengguna yang sedang logged in dengan cara menggunakan data cookies. Melakukan import serta menambahkan potongan kode pada fungsi login_user di file main/views.py dan menambahkan 'last_login': request.COOKIES['last_login'] ke dalam variabel context. Kemudian menambahkan kode di file main.html  untuk menampilkan data last login.
 - Langkah paling akhir, melakukan add-commit-push ke GitHub untuk merekap perubahan kode pada project.
