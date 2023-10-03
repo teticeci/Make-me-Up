@@ -5,41 +5,37 @@
 {% endblock meta %}
 
 {% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'login.css' %}">
 
-<div class = "login">
-
+<div class="center">
     <h1>Login</h1>
-
     <form method="POST" action="">
         {% csrf_token %}
-        <table>
-            <tr>
-                <td>Username: </td>
-                <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
-            </tr>
-                    
-            <tr>
-                <td>Password: </td>
-                <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
-            </tr>
+        <div class="txt_field">
+            <input type="text" name="username" placeholder="enter your username" class="form-control">
+            <span></span>
+            <label>Username: </label>
+        </div>
+        <div class="txt_field">
+            <input type="password" name="password" placeholder="enter your password" class="form-control">
+            <span></span>
+            <label>Password: </label>
+        </div>
+        <div class="button">
+            <input class="btn login_btn" type="submit" value="Login">
+        </div>
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
 
-            <tr>
-                <td></td>
-                <td><input class="btn login_btn" type="submit" value="Login"></td>
-            </tr>
-        </table>
+        <div class = "register">    
+        Don't have an account yet? <a href="{% url 'main:register' %}">Register Now</a>
+        </div>
     </form>
-
-    {% if messages %}
-        <ul>
-            {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}     
-        
-    Don't have an account yet? <a href="{% url 'main:register' %}">Register Now</a>
-
 </div>
-
 {% endblock content %}

@@ -120,3 +120,50 @@ Jawab:
 - Menghubungkan model Item dengan User dengan cara menambahkan import beserta potongan kode di file main/models.py berupa ForeignKey di class Product yang berfungsi menghubungkan antara satu produk dengan satu user melalui sebuah relationship. Selanjutnya, mengubah kode di file main/views.py agar  memungkinkan modifikasi sebelum tersimpan ke database. Ubah juga fungsi show_main, kemudian lakukan migrasi model untuk menyimpan semua perubahan yang telah dilakukan.
 - Menampilkan detail informasi pengguna yang sedang logged in dengan cara menggunakan data cookies. Melakukan import serta menambahkan potongan kode pada fungsi login_user di file main/views.py dan menambahkan 'last_login': request.COOKIES['last_login'] ke dalam variabel context. Kemudian menambahkan kode di file main.html  untuk menampilkan data last login.
 - Langkah paling akhir, melakukan add-commit-push ke GitHub untuk merekap perubahan kode pada project.
+
+
+(TUGAS 5)
+
+Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
+Jawab:
+- Universal Selector ('*') digunakan untuk memberikan design pada seluruh elemen
+- Elemen Selecctor digunakan untuk memberikan design pada elemen yang spesifik
+- Class Selector (.classname) digunakan untuk memberikan design pada sekelompok elemen
+- ID Selector (#idname) digunakan untuk memberikan design pada elemen berdasarkan ID
+- Attribute Selector ([attribute=value]) digunakan untuk memilih elemen berdasarkan atribut tertentu
+- Descendant Selector (ancestor descendant) digunakan untuk memilih elemen dalam suatu hierarki
+- Child Selector (parent > child) digunakan ketika ingin memilih elemen yang merupakan child dari parentnya
+
+Jelaskan HTML5 Tag yang kamu ketahui.
+Jawab:
+Berikut ini beberapa tag yang tersedia di HTML5:
+<article> </article> berguna untuk mendefinisikan sebuah artikel
+<audio> </audio> berguna untuk menyematkan audio dalam dokumen HTML
+<datalist> </datalist> mewakilkan rangkaian opsi yang telah ditentukan sebelumnya di elemen <input>
+<footer> </footer> mewakilkan bagian footer dari suatu dokumen
+<header> </header> mewakilkan bagian header dari suatu dokumen
+
+Jelaskan perbedaan antara margin dan padding.
+Jawab:
+Penggunaan margin dan padding pada CSS, keduanya sama-sama digunakan untuk mengatur space kosong pada website.  Secara garis besar, margin digunakan untuk menata letak dari sisi luar, sedangkan padding digunakan untuk menata letak dari sisi dalam. Analoginya bila terdapat 2 kotak yang didalamnya terdapat teks, margin berguna memberi jarak antara kedua kotak tersebut, sedangkan padding berguna memberi jarak antara teks dengan kotak.
+
+Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
+Jawab:
+Bootstrap dan Tailwind merupakan framework CSS yang memberikan banyak kelebihan dibandingkan CSS yang biasa kita gunakan.
+Berikut ini perbedaan antara framework CSS Tailwind dan Bootstrap:
+- Desain dan Fleksibilitas
+Bootstrap menawarkan framework yang relatif terstruktur dengan banyak komponen set class CSS yang konsisten, sedangkan Tailwind membangun antarmuka dengan menggabungkan class utilitas yang lebih kecil (utility-first) memungkinkan kustomisasi sesuai kebutuhan.
+- Ukuran File
+Bootstrap memiliki file berukuran lebih besar karena menyediakan banyak fitur dan komponen siap pakai, sedangkan Tailwind dirancang untuk lebih ringan dalam hal ukuran file.
+- Kemudahan Penggunaan
+Bootstrap cenderung beginner friendly karena dapat mulai dengan komponen yang telah didefinisikan, sedangkan Tailwind cenderung lebih advance karena memerlukan pemahaman terhadap kelas-kelas utilitas yang tersedia dan bagaimana menggabungkannya untuk mencapai tampilan yang diinginkan.
+Dalam penggunaannya, Bootstrap lebih cocok untuk membuat website standar dan konsisten dengan desain yang sudah umum digunakan. Sebaliknya, Tailwind lebih cocok untuk membuat website yang memerlukan detailing di dalamnya karena tidak terbatas pada gaya bawaan.
+
+Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+Jawab:
+- Menjalankan virtual environment setiap ingin mulai memrogram aplikasi
+- Menambahkan Bootstrap sebagai framework CSS serta Javascript ke aplikasi dengan menambahkan potongan kode di base.html
+- Memanfaatkan template dari Bootstrap untuk membuat beberapa fitur Card pada aplikasi, dengan tambahan modifikasi
+- Menambahkan fitur edit dan delete item pada aplikasi, langkah awal yaitu membuat fungsi di file views.py, lalu mengimpor fungsi ke urls.py dan menambahkan path ke urlpatterns, tahap akhir membuat berkas html sesuai dengan fungsi di  main/templates
+- Memeriksa output program dengan python manage.py runserver
+- Melakukan git add, git commit, dan git push
