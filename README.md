@@ -88,13 +88,17 @@ Screenshot dari hasil akses URL pada Postman
 (TUGAS 4)
 
 Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?
+
 Jawab:
+
 UserCreationForm merupakan built in form di Django yang digunakan untuk membuat pengguna baru yang dapat menggunakan aplikasi web. Terdapat three fields di dalamnya yaitu username, password, dan password confirmation.
+
 Kelebihan:
 - Praktis digunakan
 Django's built-in authentication system yang praktis penggunaannya, hanya perlu mengimpor dan bisa langsung digunakan.
 - Validasi bawaan
 Memastikan user memasukkan informasi dengan tingkat keamanan tinggi serta unik untuk username dan password.
+
 Kekurangan:
 - Keamanan
 Meskipun Django telah menuntun user untuk memasukkan informasi yang unik, terdapat beberapa serangan yang berpotensi menyerang website seperti serangan CSRF attack. Maka dari itu, user perlu menambahkan tag {% csrf_token %} pada template.
@@ -102,18 +106,25 @@ Meskipun Django telah menuntun user untuk memasukkan informasi yang unik, terdap
 Default yang diberikan masih terbatas, apabila user memiliki kebutuhan tambahan, perlu menyesuaikan dengan form tersebut.
 
 Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
+
 Jawab:
+
 Autentikasi dan otorisasi sangat penting bagi aplikasi website karena berfungsi untuk mengamankan informasi pada sistem secara otomatis. Perbedaan utama terletak pada, autentikasi memverifikasi identitas user, sedangkan otorisasi menentukan tindakan apa yang dapat user lakukan dalam aplikasi web. Contohnya otorisasi yang berbeda antara akun dosen dan akun mahasiswa di website SIAKNG.
 
 Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?
+
 Jawab:
+
 Cookies browser adalah istilah kumpulan informasi yang berisi rekam jejak dan aktivitas user saat menelusuri sebuah website. Biasanya, suatu website akan memberikan notifikasi persetujuan penggunaan cookies kepada new visitor. Pada Django, cookies sisi klien menyimpan berbagai data yang berguna untuk aplikasi web, lalu web akan menyimpannya untuk memberikan informasi yang relevan berdasarkan rekam jejak user.
 
 Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?
+
 Jawab:
+
 Pada kondisi normal, cookies tidak bisa mentransfer malware/virus karena data yang dibawa cookies tidak dapat dialihkan ketika berpindah dari komputer ke website dan sebaliknya. Maka dari itu, user harus menghindari situs-situs yang mencurigakan dan berpotensi bahaya agar informasi cookies tidak dicuri.
 
 Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
 Jawab:
 - Mengimplementasikan fungsi registrasi, login, dan logout dengan cara menambahkan import beserta potongan kode di file main/views.py berupa fungsi def register(request), def login_user(request), dan def logout_user(request). Kemudian, membuat berkas html di file main/templates untuk setiap fungsi yang telah diinisiasi sebelumnya. Terakhir, membuka file main/urls.py lalu menambahkan import fungsi beserta potongan kode di urlspatterns untuk mengakses setiap fungsi yang telah diimpor.
 - Membuat dua akun pengguna dengan masing-masing tiga dummy data dengan cara melakukan registrasi akun serta melakukan add new product pada web.
