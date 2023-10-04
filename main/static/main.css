@@ -1,13 +1,16 @@
-*, html{
+*{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 body{
-    background-color: #f2e4e7;
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    background: linear-gradient(#f2e4e7, #d2adad , #dcb49e);
 }
 nav{
-    background-color: #e7cdcf;
+    background-color: #fff5f5;
     display: flex;
     justify-content: space-between;
     padding: 1rem 2rem;
@@ -18,27 +21,60 @@ nav ul{
     gap: 3rem;
     list-style: none;
 }
-nav div img{
-    width: 50px;
-
-}
 nav ul li a{
     text-decoration: none;
     font-family: Helvetica, Arial, sans-serif;
-    color: rgb(150, 150, 150);
+    color: rgb(0, 0, 0);
     font-weight: 600;
-    padding: 7px 0;
+    padding: 7px 30px 0 0;
     transition: all;
     transition-duration: 300ms;
-    border-bottom: 2px solid #dcb49e00;
+    border-bottom: 2px solid #ffffff00;
 }
 nav ul li a:hover{
-    color:#8c7870;
-    border-bottom: 2px solid #d2adad;
+    color: #00a86b;
 }
 nav h3{
-    /* font-family: Helvetica, Arial, sans-serif; */
-    color: #0000;
-    font-weight: 700;
-    margin-top: 5px;
+    color: black;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    padding: 0 0 0 30px ;
+}
+.card-deck{
+    height: auto;
+    width: 300px;
+    border-radius: 10px;
+    margin: auto;
+}
+.card-body{
+    padding: 10px;
+    margin-top: -15px;
+}
+.card-body h4{
+    color: #8c7870;
+    padding: 10px 0 0;
+}
+button{
+    border-radius: 50px;
+    width: 60px;
+    background-color: whitesmoke;
+}
+button:hover{
+    background-color: #d2adad;
+}
+h4{
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    color: #8c7870;
+}
+h5{
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: black;
+    padding: 10px 0 0 30px ;
+
+}
+#last_login{
+    text-align: center;
 }
