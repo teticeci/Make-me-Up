@@ -6,7 +6,9 @@ Tautan aplikasi: https://make-me-up.adaptable.app
 ## TUGAS 2
 
 Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
 Jawab:
+
 Langkah awal saya dimulai dengan membuat repositori lokal dan menghubungkannya dengan repositori di GitHub.
 Selanjutnya, membuat new app pada Adaptable.io yang telah dihubungkan dengan repositori proyek GitHub.
 Kemudian, membuat aplikasi Django dengan mengaktifkan virtual environment.
@@ -17,7 +19,9 @@ Langkah terakhir yaitu melakukan add, commit, dan push pada virtual environment 
 Repositori proyek GitHub akan langsung terhubung dengan deployment aplikasi di Adapatble.io
 
 Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
+
 Jawab:
+
 ![google](https://i.postimg.cc/9f3cmCWt/mvt.png)
 1. Client membuat request ke website berbasis Django
 2. Jika request valid, akan diterima oleh web server dan diteruskan ke Django
@@ -26,11 +30,15 @@ Jawab:
 6. Template akan menghasilkan respon yang sesuai, misalnya (berkas html) dan diteruskan kembali ke client
 
 Jelaskan mengapa kita menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?
+
 Jawab:
+
 Virtual environment berguna sebagai wadah untuk menampung modul suatu proyek pekerjaan agar terisolasi dan memungkinkan menggunakan versi Python berbeda untuk setiap proyek. Membuat aplikasi web berbasis Django tanpa virtual environment memang dapat dilakukan, namun tidak disarankan karena tak adanya isolasi proyek.
 
 Jelaskan apakah itu MVC, MVT, MVVM dan perbedaan dari ketiganya.
+
 Jawab:
+
 Model View Controller (MVC) adalah pola desain arsitejtur website/aplikasi yang terbagi ke dalam tiga komponen utama, yaitu model, view, dan controller.
 Model View Presenter (MVP) adalah turunan dari model arsitektur MVC yang berfokus pada peningkatan logika presentasi, terbagi ke dalam tiga komponen utama, yaitu model, view, dan presenter.
 Model View ViewModel (MVVM) adalah evolusi dari model penggabungan MVC dan MVP yang berfokus pada pemisahan perhatian dan pengujian, terbagi ke dalam tiga komponen, yaitu model, view, dan viewmodel.
@@ -39,11 +47,15 @@ Model View ViewModel (MVVM) adalah evolusi dari model penggabungan MVC dan MVP y
 ## TUGAS 3
 
 Apa perbedaan antara form POST dan form GET dalam Django?
+
 Jawab:
+
 Form POST berperan untuk mengirimkan data ke action untuk ditampung, tanpa ditampilkan pada URL. Sedangkan form GET berperan untuk menampilkan data pada URL, kemudian akan ditampung oleh action.
 
 Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
+
 Jawab:
+
 XML (Extensible Markup Language)
 Bahasa markup yang digunakan untuk mengirimkan data yang lebih terstruktur.
 JSON (JavaScript Object Notation)
@@ -52,12 +64,16 @@ HTML (Hypertext Markup Language)
 Bahasa markup yang digunakan untuk mengatur tampilan dan struktur website, bukan untuk pertukaran data. Data dari formulir HTML ke server menggunakan metode HTTP GET atau POST.
 
 Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?
+
 Jawab:
+
 JSON termasuk format data yang sering digunakan karena penulisan kode sederhana yang mudah dibaca, dipahami, serta menunjukkan data terstruktur berdasarkan syntax objek JavaScript. Selain itu proses loading data yang lebih ringan karena ukuran file yang kecil.
 JSON sering digunakan dalam pengembangan API RESTful, yang menjadi standar dalam komunikasi antara klien dan server dalam aplikasi web modern.
 
 Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
 Jawab:
+
 - Mengatur routing dari main/ ke /
 
 Menggunakan / sebagai basis URL, memiliki fleksibilitas untuk mengubah struktur situs tanpa perlu mengubah URL untuk setiap halaman. Tahapannya yaitu dengan menjalankan virtual environment, lalu membuka urls.py pada folder beauty_store dan mengubah path main/ menjadi ' ' pada urlpatterns.
@@ -136,7 +152,9 @@ Jawab:
 ## TUGAS 5
 
 Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
-Jawab:
+J
+awab:
+
 - Universal Selector ('*') digunakan untuk memberikan design pada seluruh elemen
 - Elemen Selecctor digunakan untuk memberikan design pada elemen yang spesifik
 - Class Selector (.classname) digunakan untuk memberikan design pada sekelompok elemen
@@ -146,7 +164,9 @@ Jawab:
 - Child Selector (parent > child) digunakan ketika ingin memilih elemen yang merupakan child dari parentnya
 
 Jelaskan HTML5 Tag yang kamu ketahui.
+
 Jawab:
+
 Berikut ini beberapa tag yang tersedia di HTML5:
 <article> </article> berguna untuk mendefinisikan sebuah artikel
 <audio> </audio> berguna untuk menyematkan audio dalam dokumen HTML
@@ -155,11 +175,15 @@ Berikut ini beberapa tag yang tersedia di HTML5:
 <header> </header> mewakilkan bagian header dari suatu dokumen
 
 Jelaskan perbedaan antara margin dan padding.
+
 Jawab:
+
 Penggunaan margin dan padding pada CSS, keduanya sama-sama digunakan untuk mengatur space kosong pada website.  Secara garis besar, margin digunakan untuk menata letak dari sisi luar, sedangkan padding digunakan untuk menata letak dari sisi dalam. Analoginya bila terdapat 2 kotak yang didalamnya terdapat teks, margin berguna memberi jarak antara kedua kotak tersebut, sedangkan padding berguna memberi jarak antara teks dengan kotak.
 
 Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
+
 Jawab:
+
 Bootstrap dan Tailwind merupakan framework CSS yang memberikan banyak kelebihan dibandingkan CSS yang biasa kita gunakan.
 Berikut ini perbedaan antara framework CSS Tailwind dan Bootstrap:
 - Desain dan Fleksibilitas
@@ -171,7 +195,9 @@ Bootstrap cenderung beginner friendly karena dapat mulai dengan komponen yang te
 Dalam penggunaannya, Bootstrap lebih cocok untuk membuat website standar dan konsisten dengan desain yang sudah umum digunakan. Sebaliknya, Tailwind lebih cocok untuk membuat website yang memerlukan detailing di dalamnya karena tidak terbatas pada gaya bawaan.
 
 Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
 Jawab:
+
 - Menjalankan virtual environment setiap ingin mulai memrogram aplikasi
 - Menambahkan Bootstrap sebagai framework CSS serta Javascript ke aplikasi dengan menambahkan potongan kode di base.html
 - Memanfaatkan template dari Bootstrap untuk membuat beberapa fitur Card pada aplikasi, dengan tambahan modifikasi
@@ -183,22 +209,30 @@ Jawab:
 ## TUGAS 6
 
 Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
+
 Jawab:
+
 Dalam proses sinkron, setiap fungsi dijalankan satu demi satu, dengan urutan yang telah ditentukan. Apabila sebuah fungsi sedang berjalan, fungsi lainnya harus menunggu hingga fungsi tersebut selesai sepenuhnya sebelum dapat dimulai. Ini sering kali menciptakan ketergantungan waktu yang ketat dan dapat mempengaruhi kecepatan keseluruhan dari sebuah sistem atau aplikasi. Sebaliknya, dalam proses asinkron, fungsi-fungsi dapat berjalan secara independen satu sama lain. Ini memungkinkan beberapa tugas untuk dieksekusi tanpa harus menunggu tugas lain selesai, memberikan fleksibilitas lebih dalam hal pengaturan waktu dan sumber daya, serta meningkatkan efisiensi dalam banyak skenario.
 
 Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
+
 Jawab:
+
 Paradigma event-driven programming, juga dikenal sebagai pemrograman berbasis peristiwa, memungkinkan program untuk menanggapi peristiwa yang terjadi, yang biasanya berasal dari input pengguna atau perubahan sistem. Paradigma ini sangat bergantung pada JavaScript, bahasa scripting yang paling banyak digunakan di web, terutama ketika bekerja dengan DOM (Document Object Model) dan teknologi seperti AJAX. Contoh paradigma pada tugas ini yaitu document.getElementById("button_add").addEventListener('click', function(event)), di mana 'click' merupakan nama event dan function(event) merupakan fungsi yang akan dijalankan saat event terjadi.
 
 Jelaskan penerapan asynchronous programming pada AJAX.
+
 Jawab:
+
 - Browser melakukan panggilan JavaScript untuk memulai fungsi tertentu, yang pada gilirannya mengaktifkan objek XMLHttpRequest. Objek ini memungkinkan komunikasi antara browser dan server berjalan asinkron, yang memudahkan pertukaran data tanpa perlu memuat ulang halaman.
 - Begitu panggilan XMLHttpRequest dimulai, web browser secara otomatis mengirimkan permintaan HTTP ke server tanpa intervensi pengguna. Permintaan ini biasanya berisi detail terperinci tentang informasi atau tindakan yang diperlukan.
 - Setelah server menerima permintaan ini, browser mencari, mengolah, dan mengumpulkan data. Selanjutnya, data dikirim kembali ke web browser dalam format yang telah ditentukan, seperti JSON atau XML.
 - Web browser memproses dan menampilkan data atau informasi pada halaman saat server mengirimkannya kembali.
 
 Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.
+
 Jawab:
+
 - Fetch API
 Fetch API tidak membutuhkan pustaka karena berbasis JavaScript. Menggunakan konsep promises, yang memungkinkan penanganan kode asinkron dengan cara yang lebih elegan, terutama saat dikombinasikan dengan fitur async/await. Hal ini memberikan pengembang yang lebih terkontrol tentang bagaimana mengelola permintaan. Dengan menggunakan Fetch API, kode untuk permintaan asinkron menjadi lebih sederhana dan lebih mudah dibaca.
 - jQuery
@@ -206,7 +240,9 @@ Kode yang digunakan untuk AJAX dan manipulasi DOM seringkali lebih singkat dan m
 Menurut saya, Fetch API adalah pilihan yang lebih baik untuk menangani permintaan asinkron dalam proyek kontemporer dan ingin memanfaatkan fitur JavaScript terbaru sambil mengurangi ketergantungan pada pustaka eksternal. Karena kejelasannya, pendekatan berbasis promise, dan fakta bahwa tidak memerlukan pustaka tambahan.
 
 Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
 Jawab:
+
 - Mengubah kode card data item agar mendukung AJAX GET dengan menambahkan fungsi baru get_product_json yang menerima parameter request. Lalu mengimpor serta menambahkan path ke urlpatterns di main/urls.py.
 - Menambahkan kode agar mendukung AJAX POST dengan membuat fungsi baru create_product_ajax di main/views.py yang menerima parameter request, agar dapat menambahkan item baru tanpa harus me-reload page.
 - Melakukan perintah py manage.py collectstatic agar file static dari setiap aplikasi dalam suatu folder yang dapat dengan mudah disajikan pada produksi.
