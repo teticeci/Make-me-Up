@@ -1,79 +1,190 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
 body{
+    background: #f8f4f5;
+}
+
+body, h1, h2, h3, h4, h5, h6, p {
     margin: 0;
     padding: 0;
     font-family: Helvetica, Arial, sans-serif;
-    background: linear-gradient(#f2e4e7, #d2adad , #dcb49e);
 }
-nav{
-    background-color: #fff5f5;
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 2rem;
+
+h6{
+    padding: 7px 20px;
+    font-weight: 400;
 }
-nav ul{
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-    list-style: none;
+
+.container {
+    width: 90%;
+    margin: 0 auto;
 }
-nav ul li a{
+
+.navbar {
+    background-color: #fff;
+    padding: 20px;
+    border-bottom: 1px solid #000000;
+}
+
+.navbar h3 {
+    display: inline-block;
+    color: #cb9c9c;
+    font-weight: bolder;
+}
+
+.navbar h6[data-bs-target="#exampleModal"] {
+    color: #8c7870;
+    cursor: pointer;
+    transition: color 0.3s;
+    font-weight: bold;
+}
+
+.navbar h6[data-bs-target="#exampleModal"]:hover {
+    color: #0056b3;
+}
+
+.navbar h6[data-bs-target="#deleteModal"] {
+    color: #8c7870;
+    cursor: pointer;
+    transition: color 0.3s;
+    font-weight: bold;
+}
+
+.navbar h6[data-bs-target="#deleteModal"]:hover {
+    color: #c82333;
+}
+
+.navbar ul li:nth-child(3) a {
+    color: #8c7870;
+    cursor: pointer;
+    transition: color 0.3s;
+    font-weight: bold;
+}
+
+.navbar ul li:nth-child(3) a:hover {
+    color: #0056b3;
+}
+
+.navbar a[href*="logout"] {
+    display: inline-block;
+    padding: 5px 15px;
+    background-color: #8c7870;
+    color: #fff;
+    border-radius: 5px;
     text-decoration: none;
-    font-family: Helvetica, Arial, sans-serif;
-    color: rgb(0, 0, 0);
-    font-weight: 600;
-    padding: 7px 30px 0 0;
-    transition: all;
-    transition-duration: 300ms;
-    border-bottom: 2px solid #ffffff00;
+    transition: background-color 0.3s, color 0.3s;
 }
-nav ul li a:hover{
-    color: #00a86b;
-}
-nav h3{
-    color: black;
-    font-family: Helvetica, Arial, sans-serif;
-    font-weight: 600;
-    padding: 0 0 0 30px ;
-}
-.card-deck{
-    height: auto;
-    width: 300px;
-    border-radius: 10px;
-    margin: auto;
-}
-.card-body{
-    padding: 10px;
-    margin-top: -15px;
-}
-.card-body h4{
-    color: #8c7870;
-    padding: 10px 0 0;
-}
-button{
-    border-radius: 50px;
-    width: 60px;
-    background-color: whitesmoke;
-}
-button:hover{
+
+.navbar a[href*="logout"]:hover {
     background-color: #d2adad;
+    color: #ffffff;
 }
-h4{
-    font-family: Helvetica, Arial, sans-serif;
-    font-weight: 600;
-    color: #8c7870;
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    display: inline-block;
+    float: right;
 }
-h5{
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    color: black;
-    padding: 10px 0 0 30px ;
+
+.navbar ul li {
+    display: inline-block;
+    margin-left: 20px;
 }
+
+/* Styling the cards */
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+    margin: 15px;
+    flex: 0 1 calc(33.333% - 30px); /* This ensures cards take up one-third of the container's width minus margin */
+    box-sizing: border-box;
+    background: linear-gradient(#f2e4e7,#d2adad);
+}
+
+.product-details, .product-actions {
+    margin: 10px 0;
+}
+
+.action-button, .action-button-delete {
+    margin-right: 10px;
+    padding: 5px 15px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.action-button {
+    background-color: #8c7870;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.action-button-delete {
+    background-color: #8c7870;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.action-button:hover {
+    background-color: #0056b3;
+}
+
+.action-button-delete:hover {
+    background-color: #c82333;
+}
+
+/* Grid layout for the cards */
+#product_table {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+/* Styling for modals */
+.modal-content {
+    padding: 20px;
+}
+
+.btn {
+    padding: 5px 15px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 3px;
+}
+
+.btn-secondary {
+    background-color: #8c7870;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #545b62;
+}
+
+.btn-primary {
+    background-color: #8c7870;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-danger {
+    background-color: #8c7870;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
 #last_login{
     text-align: center;
+}
+
+.product-name {
+    color: #8c7870;
+    font-weight: 700;
 }

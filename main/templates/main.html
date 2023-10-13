@@ -9,10 +9,10 @@
     <h3>Make-me-Up's Inventory</h3>
     <ul>
         <li>
-            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product by AJAX</button>
+            <h6 type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Add New Product by AJAX</button>
         </li>
         <li>
-            <button type="button" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete Product by AJAX</button>
+            <h6 type="button" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete Product by AJAX</button>
         </li>        
         <li>
             <a href="{% url 'main:create_product' %}">Add New Product</a>
@@ -24,8 +24,8 @@
 </nav>
 
 <!-- BIODATA -->
-<h5>Name: {{name}}</h5>
-<h5>Class: {{class}}</h5>
+<h6>Name: {{name}}</h6>
+<h6>Class: {{class}}</h6>
 
 <!-- Modal for adding a new product -->
 <table id="product_table" >
@@ -103,7 +103,7 @@
 
         for (const item of products) {
             htmlString += `
-            <div class="card border-secondary mt-4">
+            <div class="card border-secondary mt-3">
                 <div class="card-body">
                     <div class="product-details">
                         <h4 class="product-name">${item.fields.name}</h4>
@@ -124,7 +124,8 @@
             deleteOptions += `<option value="${item.pk}">${item.fields.name}</option>`;
         }
 
-        document.getElementById("product_table").innerHTML = htmlString;
+        document.getElementById("product_table").innerHTML = '';  // clear the table
+        document.getElementById("product_table").innerHTML = htmlString;  // add products
         document.getElementById("deleteProductSelect").innerHTML = deleteOptions;
         document.querySelector("#ajax_form").addEventListener("submit", function() {
             fetch(this.action, {
@@ -145,7 +146,6 @@
 
     }
 
-
     refreshProducts();
 
     function getCookie(name) {
@@ -155,8 +155,6 @@
     }
 
     const csrftoken = getCookie('csrftoken');
-
-
 
     function deleteProductAjax() {
         const productId = document.getElementById("deleteProductSelect").value;
