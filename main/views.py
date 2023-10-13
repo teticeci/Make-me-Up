@@ -132,16 +132,16 @@ def create_product_ajax(request):
         new_item.save()
 
         # Kembalikan respons sukses
-        return JsonResponse({"message": "Item created successfully."}, status=201)
+        return JsonResponse({"message": "Product created successfully."}, status=201)
     else:
         return JsonResponse({"error": "Invalid request method."}, status=400)
 
 @csrf_exempt
-def delete_product_ajax(request, product_id):
+def delete_product_ajax(request, id):
     if request.method == 'DELETE':
-        product = Item.objects.filter(pk=product_id)
+        product = Item.objects.filter(pk=id)
         if product.exists():
-            product.first().delete()
+            product.delete()
             return JsonResponse({"message": "Product deleted successfully."}, status=200)
         else:
             return JsonResponse({"error": "Product not found."}, status=404)

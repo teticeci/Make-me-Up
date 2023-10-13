@@ -9,11 +9,10 @@
     <h3>Make-me-Up's Inventory</h3>
     <ul>
         <li>
-            <!-- Button to trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product by AJAX</button>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product by AJAX</button>
         </li>
         <li>
-            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete Product by AJAX</button>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete Product by AJAX</button>
         </li>        
         <li>
             <a href="{% url 'main:create_product' %}">Add New Product</a>
@@ -64,6 +63,8 @@
 </div>
 
 <!-- Modal for deleting a product with AJAX -->
+<table id="product_table" >
+</table>
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -74,7 +75,6 @@
             <div class="modal-body">
                 <label for="deleteProductSelect">Select product to delete:</label>
                 <select id="deleteProductSelect" class="form-control">
-                    <!-- Options will be filled using JavaScript -->
                 </select>
             </div>
             <div class="modal-footer">
@@ -84,7 +84,6 @@
         </div>
     </div>
 </div>
-
 
 <br />
 
