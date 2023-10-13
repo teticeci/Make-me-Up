@@ -3,7 +3,7 @@ Tautan repositori: https://github.com/teticeci/Make-me-Up.git
 Tautan aplikasi: https://make-me-up.adaptable.app
 
 
-(TUGAS 2)
+## TUGAS 2
 
 Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 Jawab:
@@ -36,7 +36,7 @@ Model View Presenter (MVP) adalah turunan dari model arsitektur MVC yang berfoku
 Model View ViewModel (MVVM) adalah evolusi dari model penggabungan MVC dan MVP yang berfokus pada pemisahan perhatian dan pengujian, terbagi ke dalam tiga komponen, yaitu model, view, dan viewmodel.
 
 
-(TUGAS 3)
+## TUGAS 3
 
 Apa perbedaan antara form POST dan form GET dalam Django?
 Jawab:
@@ -85,7 +85,7 @@ Screenshot dari hasil akses URL pada Postman
 ![Screenshot (286)](https://github.com/teticeci/Make-me-Up/assets/143377299/637d7bd9-7379-471c-8ccf-6b6a08370e09)
 
 
-(TUGAS 4)
+## TUGAS 4
 
 Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?
 
@@ -133,7 +133,7 @@ Jawab:
 - Langkah paling akhir, melakukan add-commit-push ke GitHub untuk merekap perubahan kode pada project.
 
 
-(TUGAS 5)
+## TUGAS 5
 
 Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
 Jawab:
@@ -178,3 +178,37 @@ Jawab:
 - Menambahkan fitur edit dan delete item pada aplikasi, langkah awal yaitu membuat fungsi di file views.py, lalu mengimpor fungsi ke urls.py dan menambahkan path ke urlpatterns, tahap akhir membuat berkas html sesuai dengan fungsi di  main/templates
 - Memeriksa output program dengan python manage.py runserver
 - Melakukan git add, git commit, dan git push
+
+
+## TUGAS 6
+
+Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
+Jawab:
+Dalam proses sinkron, setiap fungsi dijalankan satu demi satu, dengan urutan yang telah ditentukan. Apabila sebuah fungsi sedang berjalan, fungsi lainnya harus menunggu hingga fungsi tersebut selesai sepenuhnya sebelum dapat dimulai. Ini sering kali menciptakan ketergantungan waktu yang ketat dan dapat mempengaruhi kecepatan keseluruhan dari sebuah sistem atau aplikasi. Sebaliknya, dalam proses asinkron, fungsi-fungsi dapat berjalan secara independen satu sama lain. Ini memungkinkan beberapa tugas untuk dieksekusi tanpa harus menunggu tugas lain selesai, memberikan fleksibilitas lebih dalam hal pengaturan waktu dan sumber daya, serta meningkatkan efisiensi dalam banyak skenario.
+
+Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
+Jawab:
+Paradigma event-driven programming, juga dikenal sebagai pemrograman berbasis peristiwa, memungkinkan program untuk menanggapi peristiwa yang terjadi, yang biasanya berasal dari input pengguna atau perubahan sistem. Paradigma ini sangat bergantung pada JavaScript, bahasa scripting yang paling banyak digunakan di web, terutama ketika bekerja dengan DOM (Document Object Model) dan teknologi seperti AJAX. Contoh paradigma pada tugas ini yaitu document.getElementById("button_add").addEventListener('click', function(event)), di mana 'click' merupakan nama event dan function(event) merupakan fungsi yang akan dijalankan saat event terjadi.
+
+Jelaskan penerapan asynchronous programming pada AJAX.
+Jawab:
+- Browser melakukan panggilan JavaScript untuk memulai fungsi tertentu, yang pada gilirannya mengaktifkan objek XMLHttpRequest. Objek ini memungkinkan komunikasi antara browser dan server berjalan asinkron, yang memudahkan pertukaran data tanpa perlu memuat ulang halaman.
+- Begitu panggilan XMLHttpRequest dimulai, web browser secara otomatis mengirimkan permintaan HTTP ke server tanpa intervensi pengguna. Permintaan ini biasanya berisi detail terperinci tentang informasi atau tindakan yang diperlukan.
+- Setelah server menerima permintaan ini, browser mencari, mengolah, dan mengumpulkan data. Selanjutnya, data dikirim kembali ke web browser dalam format yang telah ditentukan, seperti JSON atau XML.
+- Web browser memproses dan menampilkan data atau informasi pada halaman saat server mengirimkannya kembali.
+
+Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.
+Jawab:
+- Fetch API
+Fetch API tidak membutuhkan pustaka karena berbasis JavaScript. Menggunakan konsep promises, yang memungkinkan penanganan kode asinkron dengan cara yang lebih elegan, terutama saat dikombinasikan dengan fitur async/await. Hal ini memberikan pengembang yang lebih terkontrol tentang bagaimana mengelola permintaan. Dengan menggunakan Fetch API, kode untuk permintaan asinkron menjadi lebih sederhana dan lebih mudah dibaca.
+- jQuery
+Kode yang digunakan untuk AJAX dan manipulasi DOM seringkali lebih singkat dan mudah digunakan dengan jQuery. Menawarkan banyak alat tambahan untuk mengatur DOM, animasi, pengelolaan event, dan fitur lainnya. Dengan menggunakan jQuery, Anda dapat menambahkan pustaka eksternal ke proyek Anda, yang dapat meningkatkan ukuran dan waktu pemuatan halaman. Meskipun jQuery mendukung callback dan deferred objects, pendekatan asinkronitasnya mungkin tidak sebaik pendekatan Fetch API dengan promises.
+Menurut saya, Fetch API adalah pilihan yang lebih baik untuk menangani permintaan asinkron dalam proyek kontemporer dan ingin memanfaatkan fitur JavaScript terbaru sambil mengurangi ketergantungan pada pustaka eksternal. Karena kejelasannya, pendekatan berbasis promise, dan fakta bahwa tidak memerlukan pustaka tambahan.
+
+Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+Jawab:
+- Mengubah kode card data item agar mendukung AJAX GET dengan menambahkan fungsi baru get_product_json yang menerima parameter request. Lalu mengimpor serta menambahkan path ke urlpatterns di main/urls.py.
+- Menambahkan kode agar mendukung AJAX POST dengan membuat fungsi baru create_product_ajax di main/views.py yang menerima parameter request, agar dapat menambahkan item baru tanpa harus me-reload page.
+- Melakukan perintah py manage.py collectstatic agar file static dari setiap aplikasi dalam suatu folder yang dapat dengan mudah disajikan pada produksi.
+- Melakukan add-commit-push ke GitHub.
+- Melakukan deployment ke PaaS PBP Fasilkom UI

@@ -13,6 +13,8 @@ from main.forms import ItemForm
 from django.urls import reverse
 from django.http import HttpResponse
 from django.core import serializers
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 @login_required(login_url='/login')
@@ -111,3 +113,36 @@ def delete_product(request, id):
     product.delete()
     # Kembali ke halaman awal
     return HttpResponseRedirect(reverse('main:show_main'))
+
+def get_product_json(request):
+    product_item = Item.objects.all()
+    return HttpResponse(serializers.serialize('json', product_item))
+
+@csrf_exempt
+def create_product_ajax(request):
+    if request.method == 'POST':
+        # Membaca data dari request POST
+        name = request.POST.get("name")
+        amount = request.POST.get("amount")
+        description = request.POST.get("description")
+        user = request.user
+        
+        # Membuat item baru
+        new_item = Item(name=name, amount=amount, description=description, user=user)
+        new_item.save()
+
+        # Kembalikan respons sukses
+        return JsonResponse({"message": "Item created successfully."}, status=201)
+    else:
+        return JsonResponse({"error": "Invalid request method."}, status=400)
+
+@csrf_exempt
+def delete_product_ajax(request, product_id):
+    if request.method == 'DELETE':
+        product = Item.objects.filter(pk=product_id)
+        if product.exists():
+            product.first().delete()
+            return JsonResponse({"message": "Product deleted successfully."}, status=200)
+        else:
+            return JsonResponse({"error": "Product not found."}, status=404)
+    return JsonResponse({"error": "Invalid method."}, status=400)

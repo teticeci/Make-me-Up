@@ -4,11 +4,17 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'main.css' %}">
 
-
 <!-- NAVBAR -->
 <nav class="navbar">
     <h3>Make-me-Up's Inventory</h3>
     <ul>
+        <li>
+            <!-- Button to trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product by AJAX</button>
+        </li>
+        <li>
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete Product by AJAX</button>
+        </li>        
         <li>
             <a href="{% url 'main:create_product' %}">Add New Product</a>
         </li>
@@ -22,34 +28,165 @@
 <h5>Name: {{name}}</h5>
 <h5>Class: {{class}}</h5>
 
-
-<div class="card-deck">
-    {% for product in products %}
-    <div class="card border-secondary mt-4">
-        <div class="card-body">
-            <h4 class="card-title">{{product.name}}</h4>
-            <p class="card-title">Amount: {{product.amount}}</p>
-            <p class="card-title">Description: {{product.description}}</p>
-            <p class="card-title">Date Added: {{product.date_added}}</p>
-            <a href="{% url 'main:edit_product' product.pk %}">
-                <button>
-                    Edit
-                </button>
-            </a>
-            <a href="{% url 'main:delete_product' product.pk %}">
-                <button>
-                    Delete
-                </button>
-                </a>
+<!-- Modal for adding a new product -->
+<table id="product_table" >
+</table>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Product</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="ajax_form" action="{% url 'main:create_product_ajax' %}" method="POST" onsubmit="return false;">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="name" class="col-form-label">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="col-form-label">Amount:</label>
+                        <input type="number" class="form-control" id="amount" name="amount"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="col-form-label">Description:</label>
+                        <textarea class="form-control" id="description" name="description"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Add Item</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-    {% endfor %}
 </div>
+
+<!-- Modal for deleting a product with AJAX -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="deleteModalLabel">Delete Product</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label for="deleteProductSelect">Select product to delete:</label>
+                <select id="deleteProductSelect" class="form-control">
+                    <!-- Options will be filled using JavaScript -->
+                </select>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" id="button_delete" data-bs-dismiss="modal">Delete Product</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <br />
 
 <div id="last_login">
     <p>Sesi terakhir login: {{ last_login }}</p>
 </div>
+
+<script>
+    async function getProducts() {
+            return fetch("{% url 'main:get_product_json' %}").then((res) => res.json())
+    }
+
+    async function refreshProducts() {
+        const products = await getProducts();
+        let htmlString = "";
+        let deleteOptions = "";
+
+        for (const item of products) {
+            htmlString += `
+            <div class="card border-secondary mt-4">
+                <div class="card-body">
+                    <div class="product-details">
+                        <h4 class="product-name">${item.fields.name}</h4>
+                        <p class="product-description">${item.fields.description}</p>
+                        <p class="product-amount">Amount: ${item.fields.amount}</p>
+                        <p class="product-date">Date added: ${item.fields.date_added}</p>
+                    </div>
+                    <div class="product-actions">
+                            <a href="edit-product/${item.pk}">
+                                <button class="action-button">Edit</button>
+                            </a>
+                            <a href="delete/${item.pk}">
+                                <button class="action-button-delete">Delete</button>
+                            </a>
+                    </div>
+                </div>
+            </div>`;
+            deleteOptions += `<option value="${item.pk}">${item.fields.name}</option>`;
+        }
+
+        document.getElementById("product_table").innerHTML = htmlString;
+        document.getElementById("deleteProductSelect").innerHTML = deleteOptions;
+        document.querySelector("#ajax_form").addEventListener("submit", function() {
+            fetch(this.action, {
+                method: "POST",
+                body: new FormData(this)
+            }).then(response => response.json()).then(data => {
+                if (data.message) {
+                    alert(data.message);
+                    // Refresh daftar produk atau lakukan tindakan lain yang diinginkan
+                    refreshProducts();
+                    // Tutup modal dan bersihkan form
+                    document.querySelector("#ajax_form").reset();
+                } else if (data.error) {
+                    alert(data.error);
+                }
+            });
+        });
+
+    }
+
+
+    refreshProducts();
+
+    function getCookie(name) {
+        let value = "; " + document.cookie;
+        let parts = value.split("; " + name + "=");
+        if (parts.length === 2) return parts.pop().split(";").shift();
+    }
+
+    const csrftoken = getCookie('csrftoken');
+
+
+
+    function deleteProductAjax() {
+        const productId = document.getElementById("deleteProductSelect").value;
+        fetch(`{% url 'main:delete_product_ajax' 0 %}`.replace('0', productId), {
+            method: "DELETE",
+            headers: {
+                'X-CSRFToken': csrftoken
+            }
+        }).then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        }).then(data => {
+            if (data.message) {
+                alert(data.message);
+                refreshProducts();
+            } else if (data.error) {
+                alert(data.error);
+            }
+        }).catch(error => {
+            console.log('There was a problem with the fetch operation:', error.message);
+        });
+    }
+
+    document.getElementById("button_delete").onclick = deleteProductAjax;
+
+    
+</script>
+
 
 {% endblock content %}
