@@ -1,4 +1,5 @@
 import datetime
+import json
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
@@ -153,10 +154,10 @@ def create_product_flutter(request):
         
         data = json.loads(request.body)
 
-        new_product = Product.objects.create(
+        new_product = Item.objects.create(
             user = request.user,
             name = data["name"],
-            price = int(data["price"]),
+            amount = int(data["amount"]),
             description = data["description"]
         )
 
